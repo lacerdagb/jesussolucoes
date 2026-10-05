@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Jesus Soluções | Manutenção Residencial e Comercial no Rio de Janeiro</title>
+    <meta name="description" content="Serviços profissionais de refrigeração, elétrica, blindex e drywall no Rio de Janeiro. Atendimento rápido, garantia e preço justo para sua casa ou empresa.">
+    <meta name="keywords" content="refrigeração, ar condicionado, eletricista, blindex, drywall, manutenção residencial, manutenção comercial, Rio de Janeiro">
+    <meta name="author" content="De Jesus Soluções">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#3b82f6',
+                            600: '#0000be', // Cor principal solicitada
+                            700: '#000099',
+                            800: '#000077',
+                            900: '#000055'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS for specific styling -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0000be 0%, #1e1b4b 100%);
+        }
+        .whatsapp-pulse {
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo / Nome da Empresa -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center text-white text-xl font-extrabold shadow-md shadow-brand-600/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold text-slate-900 tracking-tight leading-none group-hover:text-brand-600 transition-colors">DE JESUS</span>
+                    <span class="text-xs font-bold text-brand-600 tracking-widest uppercase mt-0.5">Soluções</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#beneficios" class="hover:text-brand-600 transition-colors">Diferenciais</a>
+                <a href="#servicos" class="hover:text-brand-600 transition-colors">Serviços</a>
+                <a href="#depoimentos" class="hover:text-brand-600 transition-colors">Depoimentos</a>
+                <a href="#contato" class="hover:text-brand-600 transition-colors">Contato</a>
+            </nav>
+
+            <!-- CTA Button Navbar -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://wa.me/5521998773538?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20minha%20resid%C3%AAncia/empresa." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-5 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Pedir Orçamento</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-700 text-2xl focus:outline-none p-2" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3">
+            <a href="#beneficios" class="block py-2 text-slate-700 font-medium hover:text-brand-600">Diferenciais</a>
+            <a href="#servicos" class="block py-2 text-slate-700 font-medium hover:text-brand-600">Serviços</a>
+            <a href="#depoimentos" class="block py-2 text-slate-700 font-medium hover:text-brand-600">Depoimentos</a>
+            <a href="#contato" class="block py-2 text-slate-700 font-medium hover:text-brand-600">Contato</a>
+            <a href="https://wa.me/5521998773538?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20minha%20resid%C3%AAncia/empresa." 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-center block shadow flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Chamar no WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative gradient-bg text-white overflow-hidden py-16 lg:py-24">
+        <!-- Elemento Decorativo no Fundo -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white blur-3xl"></div>
+            <div class="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-brand-500 blur-2xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Conteúdo da Hero -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 text-xs sm:text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>Atendimento Residencial e Comercial</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Soluções Profissionais para Sua Casa e Empresa
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-200 max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Soluções completas para sua casa, sua empresa e seu conforto. Especialistas em refrigeração, serviços elétricos, blindex e drywall com garantia total.
+                    </p>
+
+                    <!-- CTAs da Hero -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/5521998773538?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20r%C3%A1pido." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-bold py-4 px-8 rounded-xl shadow-xl shadow-emerald-900/30 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Pedir Orçamento Imediato</span>
+                        </a>
+
+                        <a href="#servicos" 
+                           class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold py-4 px-6 rounded-xl backdrop-blur-md border border-white/30 transition-all text-center">
+                            Ver Nossos Serviços
+                        </a>
+                    </div>
+
+                    <!-- Métricas / Badges Rápidos -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/10 max-w-lg mx-auto lg:mx-0 text-center">
+                        <div>
+                            <p class="text-2xl font-bold text-white">100%</p>
+                            <p class="text-xs text-slate-300">Garantia em Serviços</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">Rápido</p>
+                            <p class="text-xs text-slate-300">Atendimento Imediato</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">Seguro</p>
+                            <p class="text-xs text-slate-300">Técnicos Qualificados</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Interativo / Destaque na Hero -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 text-slate-800 shadow-2xl border border-slate-100 relative">
+                        <div class="absolute -top-3 -right-3 bg-amber-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                            Atendimento Rápido
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Precisa de Reparos Hoje?</h3>
+                        <p class="text-sm text-slate-600 mb-6">Fale diretamente com nossa equipe de manutenção e resolva seu problema sem complicação.</p>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl">
+                                <div class="w-10 h-10 rounded-lg bg-blue-100 text-brand-600 flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-snowflake"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900">Ar Condicionado & Refrigeração</p>
+                                    <p class="text-xs text-slate-500">Instalação, limpeza e carga de gás rápida.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl">
+                                <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900">Instalações Elétricas</p>
+                                    <p class="text-xs text-slate-500">Manutenção de quadros, curto-circuitos e disjuntores.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-border-all"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900">Blindex & Drywall</p>
+                                    <p class="text-xs text-slate-500">Divisórias, portas, janelas e acabamentos finos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/5521998773538?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20t%C3%A9cnica." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 px-4 rounded-xl text-center block transition-colors shadow-lg shadow-brand-600/30">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> Solicitar Visita Técnica
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS / DIFERENCIAIS -->
+    <section id="beneficios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Por Que Nos Escolher?</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Diferenciais que Garantem a Sua Tranquilidade</h2>
+                <p class="text-slate-600 mt-4 text-lg">Trabalhamos com alto padrão de qualidade para levar a melhor experiência e segurança ao seu ambiente.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Benefício 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-brand-600/30 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-600/10 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Profissional Qualificado</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Técnicos experientes, constantemente treinados para executar serviços de alta precisão e segurança.</p>
+                </div>
+
+                <!-- Benefício 2 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-brand-600/30 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-600/10 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Atendimento Rápido</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Pontualidade e urgência para resolver seus problemas sem perder tempo ou interromper sua rotina.</p>
+                </div>
+
+                <!-- Benefício 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-brand-600/30 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-600/10 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Serviço com Garantia</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Total respaldo e transparência em tudo o que fazemos. Sua satisfação e segurança vêm em 1º lugar.</p>
+                </div>
+
+                <!-- Benefício 4 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-brand-600/30 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-600/10 text-brand-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Preço Justo</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Orçamentos honestos, sem taxas escondidas e com excelente custo-benefício para o seu bolso.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS PRINCIPAIS -->
+    <section id="servicos" class="py-20 bg-slate-100/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Especialidades</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Nossas Soluções de Manutenção</h2>
+                <p class="text-slate-600 mt-4 text-lg">Atendemos demandas residenciais e comerciais com soluções integradas e acabamento impecável.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Serviço 1: Refrigeração -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 hover:shadow-xl transition-all group flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-temperature-arrow-down"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Refrigeração e Climatização</h3>
+                        <p class="text-slate-600 mb-6">Mantenha seu ambiente agradável e saudável com serviços completos de ar-condicionado.</p>
+                        
+                        <ul class="space-y-2.5 text-sm font-medium text-slate-700">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Instalação de Ar Condicionado (Split e Janela)
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Manutenção Preventiva e Corretiva
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Higienização e Limpeza Profunda
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Carga de Gás e Recarga do Sistema
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="https://wa.me/5521998773538?text=Ol%C3%A1!%20Preciso%20de%20servi%C3%A7o%20de%20Refrigera%C3%A7%C3%A3o%20e%20Climatiza%C3%A7%C3%A3o." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full bg-slate-900 hover:bg-brand-600 text-white font-semibold py-3 px-4 rounded-xl text-center block transition-colors">
+                            Orçamento de Refrigeração
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 2: Elétrica -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 hover:shadow-xl transition-all group flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-bolt-lightning"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Serviços Elétricos</h3>
+                        <p class="text-slate-600 mb-6">Segurança e eficiência para o sistema elétrico da sua imóvel ou empresa.</p>
+                        
+                        <ul class="space-y-2.5 text-sm font-medium text-slate-700">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Instalações Elétricas em Geral
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Manutenção Preventiva e Correção de Curtos
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Montagem e Troca de Quadro de Distribuição
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Troca de Disjuntores, Tomadas e Luminárias
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="https://wa.me/5521998773538?text=Ol%C3%A1!%20Preciso%20de%20servi%C3%A7o%20de%20El%C3%A9trica." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full bg-slate-900 hover:bg-brand-600 text-white font-semibold py-3 px-4 rounded-xl text-center block transition-colors">
+                            Orçamento de Elétrica
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 3: Blindex -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 hover:shadow-xl transition-all group flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-vector-square"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Instalação de Blindex</h3>
+                        <p class="text-slate-600 mb-6">Elegância, transparência e alta durabilidade em estruturas de vidro temperado.</p>
+                        
+                        <ul class="space-y-2.5 text-sm font-medium text-slate-700">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Envidraçamento de Sacadas e Varandas
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Portas e Janelas em Blindex
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Instalação de Espelhos Decorativos
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Divisórias de Vidro para Escritórios e Lojas
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="https://wa.me/5521998773538?text=Ol%C3%A1!%20Preciso%20de%20servi%C3%A7o%20de%20Blindex." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full bg-slate-900 hover:bg-brand-600 text-white font-semibold py-3 px-4 rounded-xl text-center block transition-colors">
+                            Orçamento de Blindex
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 4: Drywall -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 hover:shadow-xl transition-all group flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-cubes"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Serviços em Drywall</h3>
+                        <p class="text-slate-600 mb-6">Construção a seco para divisão de ambientes rápida, limpa e moderna.</p>
+                        
+                        <ul class="space-y-2.5 text-sm font-medium text-slate-700">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Construção de Divisórias Internas
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Rebaixamento e Forros de Drywall
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Sancas e Projetos de Iluminação Integrada
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emerald-500"></i>
+                                Acabamentos e Reparos em Paredes de Gesso
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="https://wa.me/5521998773538?text=Ol%C3%A1!%20Preciso%20de%20servi%C3%A7o%20de%20Drywall." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full bg-slate-900 hover:bg-brand-600 text-white font-semibold py-3 px-4 rounded-xl text-center block transition-colors">
+                            Orçamento de Drywall
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVA SOCIAL / DEPOIMENTOS -->
+    <section id="depoimentos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider">Depoimentos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">O Que Dizem Nossos Clientes</h2>
+                <p class="text-slate-600 mt-4 text-lg">A satisfação de quem contratou a De Jesus Soluções é a nossa melhor recomendação.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Depoimento 1 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic text-sm mb-6">"Chamei a De Jesus Soluções para fazer a limpeza e manutenção dos meus três aparelhos de ar-condicionado. Chegaram no horário combinado, fizeram um serviço impecável sem sujeira. Super recomendo!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-slate-200/60 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center text-sm">
+                            CS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Carlos Silva</h4>
+                            <span class="text-xs text-slate-500">Cliente Residencial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic text-sm mb-6">"Fizemos a divisão de drywall e colocação da porta de blindex na minha loja. O acabamento ficou perfeito e o preço foi bem justo em relação aos concorrentes. Equipe nota 10!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-slate-200/60 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center text-sm">
+                            MA
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Mariana Almeida</h4>
+                            <span class="text-xs text-slate-500">Proprietária Comercial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 italic text-sm mb-6">"Teve um curto-circuito no meu quadro de disjuntores e resolveram rapidamente com muita segurança e profissionalismo. Fiquei impressionado com a agilidade no atendimento."</p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-slate-200/60 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center text-sm">
+                            RO
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Roberto Oliveira</h4>
+                            <span class="text-xs text-slate-500">Cliente Residencial</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO & INFORMAÇÕES -->
+    <section id="contato" class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Informações de Contato -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-emerald-400 font-bold text-sm uppercase tracking-wider">Fale Conosco</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Estamos Prontos para Atender Você</h2>
+                        <p class="text-slate-300 mt-4">Entre em contato via WhatsApp, telefone ou envie uma mensagem no formulário para receber seu orçamento rápido.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Telefone/WhatsApp -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-xl text-emerald-400 flex-shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-300">Telefone / WhatsApp</h4>
+                                <a href="https://wa.me/5521998773538" target="_blank" class="text-xl font-bold hover:text-emerald-400 transition-colors">
+                                    (21) 99877-3538
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Instagram -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-xl text-pink-400 flex-shrink-0">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-300">Siga no Instagram</h4>
+                                <a href="https://www.instagram.com/rdj.solucoes/" target="_blank" rel="noopener noreferrer" class="text-lg font-bold hover:text-pink-400 transition-colors">
+                                    @rdj.solucoes
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Horário de Funcionamento -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-xl text-amber-400 flex-shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-300">Horário de Funcionamento</h4>
+                                <p class="text-lg font-bold">Segunda a Sábado: 8:00 às 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct WhatsApp Button -->
+                    <div class="pt-4">
+                        <a href="https://wa.me/5521998773538?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Conversar Direto pelo WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulário Simples de Solicitação -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white text-slate-800 rounded-3xl p-8 shadow-2xl">
+                        <h3 class="text-2xl font-bold mb-2">Solicitar Orçamento Grátis</h3>
+                        <p class="text-sm text-slate-600 mb-6">Preencha os dados abaixo para direcionarmos seu atendimento de forma personalizada.</p>
+
+                        <form id="contact-form" onsubmit="sendToWhatsApp(event)" class="space-y-4">
+                            <div>
+                                <label for="nome" class="block text-sm font-semibold text-slate-700 mb-1">Seu Nome</label>
+                                <input type="text" id="nome" required placeholder="Digite seu nome completo" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600">
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="telefone" class="block text-sm font-semibold text-slate-700 mb-1">Telefone / WhatsApp</label>
+                                    <input type="tel" id="telefone" required placeholder="(21) 99999-9999" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600">
+                                </div>
+                                <div>
+                                    <label for="servico" class="block text-sm font-semibold text-slate-700 mb-1">Serviço Desejado</label>
+                                    <select id="servico" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 bg-white">
+                                        <option value="Refrigeração">Refrigeração / Ar Condicionado</option>
+                                        <option value="Elétrica">Serviços Elétricos</option>
+                                        <option value="Blindex">Instalação de Blindex</option>
+                                        <option value="Drywall">Drywall (Divisórias/Forros)</option>
+                                        <option value="Outros">Outros Serviços</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="mensagem" class="block text-sm font-semibold text-slate-700 mb-1">Descrição do Serviço</label>
+                                <textarea id="mensagem" rows="3" placeholder="Descreva brevemente o que você precisa..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-6 rounded-xl transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-600/30">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Enviar Solicitação via WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ COMPLETO -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+                <!-- Coluna 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <span class="text-lg font-bold text-white tracking-wide">DE JESUS <span class="text-brand-500">SOLUÇÕES</span></span>
+                    </div>
+                    <p class="text-sm">Manutenção residencial e comercial completa com foco em qualidade, garantia e excelência técnica.</p>
+                </div>
+
+                <!-- Coluna 2 -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Serviços</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Refrigeração & Ar Condicionado</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Instalações Elétricas</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Envidraçamento & Blindex</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Forros & Divisórias Drywall</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3 -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Links Úteis</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#beneficios" class="hover:text-white transition-colors">Nossos Diferenciais</a></li>
+                        <li><a href="#depoimentos" class="hover:text-white transition-colors">Depoimentos de Clientes</a></li>
+                        <li><a href="#contato" class="hover:text-white transition-colors">Pedir Orçamento</a></li>
+                        <li><a href="https://www.instagram.com/rdj.solucoes/" target="_blank" class="hover:text-white transition-colors">Perfil no Instagram</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 4 -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Atendimento</h4>
+                    <p class="text-sm mb-2"><strong class="text-slate-200">Horário:</strong> Segunda a Sábado 08:00 - 18:00</p>
+                    <p class="text-sm mb-2"><strong class="text-slate-200">WhatsApp:</strong> (21) 99877-3538</p>
+                    <p class="text-sm"><strong class="text-slate-200">Região:</strong> Rio de Janeiro e Região</p>
+                </div>
+            </div>
+
+            <!-- Direitos Autorais -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 De Jesus Soluções. Todos os direitos reservados.</p>
+                <p>Desenvolvido por Tração Web.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/5521998773538?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20r%C3%A1pido." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Atendimento pelo WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl whatsapp-pulse transition-all transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Menu Mobile Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Função para formatar mensagem e enviar diretamente ao WhatsApp
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const servico = document.getElementById('servico').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            const text = `*Nova Solicitação de Orçamento pelo Site*\n\n` +
+                         `*Nome:* ${nome}\n` +
+                         `*Telefone:* ${telefone}\n` +
+                         `*Serviço Desejado:* ${servico}\n` +
+                         `*Descrição:* ${mensagem || 'Não informada'}`;
+
+            const encodedText = encodeURIComponent(text);
+            const whatsappURL = `https://wa.me/5521998773538?text=${encodedText}`;
+
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
